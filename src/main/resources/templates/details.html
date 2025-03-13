@@ -21,7 +21,9 @@
         <li th:text="${user.name}"></li>
         <li th:text="${user.lastname}"></li>
 
-         <!--V-22,Paso 16, si es distinto de null que lo muestre -->
+         <!--
+           V-22,Paso 1.25, si es distinto de null que lo muestre.
+         -->
         <li th:if="${user.email}" th:text="${user.email}"></li>
         <li th:if="${user.email == null}" th:text="${'no tiene email'}"></li>
     </ul>

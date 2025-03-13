@@ -1,9 +1,11 @@
 package com.pjff.curso.srpingboot.webapp.springboot_web.models.dto;
 
-//Paso 27,le ponemos sus getters and setters 
+//V-26 ,Paso 2.5 creamos la clase
 public class ParamDto {
-    // sus atributos
+    // Ponemos sus atributos
     private String message;
+
+    // ----------------------------SETTERS AND GETTERS --------------
 
     public String getMessage() {
         return message;

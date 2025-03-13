@@ -23,37 +23,42 @@ public class UserRestController {
      */
     @GetMapping(path = "/details")
     /*
-     * Paso 12 ,aplicamos el DTO(data transfer object) en vez del map que aplicamos
-     * anteriormente
+     * V-19,Paso 1.20 ,aplicamos el DTO(data transfer object)
+     * en vez del map que aplicamos anteriormente.
      */
     public UserDto details() {
 
         // Paso 9,creamos nuestro objeto y nuestra instancia.
         User user = new User("Andrew", "Riordan");
 
-        // Paso 13 ,aplicamos el DTO
+        // Paso 1.21 ,aplicamos el DTO
         UserDto userDto = new UserDto();
         userDto.setUser(user);
         userDto.setTitle("Hola Mundo Spring Boot");
-        // devolvemos el userDto
+
+        // Devolvemos el userDto
         return userDto;
     }
 
     // http://localhost:8080/api/list
     @GetMapping("/list")
-    // V-21,paso 14,creamos una arrreglo que devolverá una lista
+    // V-21,paso 1.22 ,creamos una arrreglo que nos devolverá una lista.
     public List<User> list() {
         // Creammos nuestros objetos
         User user = new User("Rafael", "Ramos");
         User user2 = new User("Ivan", "Doe");
         User user3 = new User("Jhon", "Doe");
 
-        // Paso 15,usamos un helper,Arrays que es lo mismo que se hizo abajo.
+        // Paso 1.23,usamos un helper,Arrays que es lo mismo que se hizo abajo.
         List<User> users = Arrays.asList(user, user2, user3);
-        // List<User> users = new ArrayList<>();
-        // users.add(user);
-        // users.add(user2);
-        // users.add(user3);
+
+        /*
+         * Creamos un arrayList
+         * List<User> users = new ArrayList<>();
+         * users.add(user);
+         * users.add(user2);
+         * users.add(user3);
+         */
 
         return users;
     }

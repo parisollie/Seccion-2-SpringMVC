@@ -1,11 +1,13 @@
 package com.pjff.curso.srpingboot.webapp.springboot_web.models.dto;
 
+//V-27 ,Paso 2. creamos la clase
 public class ParamMixDto {
-    // Vid 27 ,paso 29, creamos los atributos del mixto asi como sus setters and
-    // getters
+    // Ponemos sus atributos
     private String message;
 
     private Integer code;
+
+    // ----------------------------SETTERS AND GETTERS --------------
 
     public String getMessage() {
         return message;

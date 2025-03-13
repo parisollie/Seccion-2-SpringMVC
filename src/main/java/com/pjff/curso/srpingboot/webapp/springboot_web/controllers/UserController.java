@@ -23,7 +23,7 @@ public class UserController {
         // V-16 Paso 1.16,ponemos nuestro objeto.
         User user = new User("Joaquin", "Sandoval");
         /*
-         * V-22,Paso 15 le ponemos su correo y si lo comentamos aparece que no
+         * V-22,Paso 1.26 le ponemos su correo y si lo comentamos aparece que no
          * user.setEmail("joaquin@correo.com");
          * 
          * Paso 1.3, inyectamos el "tittle" es lo que le pasaremos a la vista HTML,
@@ -37,7 +37,7 @@ public class UserController {
     }
 
     /*
-     * V-23,Paso 17, creamos metodo del tipo list,una lista tn thymeleaf
+     * V-23,Paso 1.27, creamos metodo del tipo list,una lista tn thymeleaf
      * http://localhost:8080/list
      */
     @GetMapping("/list")
@@ -47,12 +47,15 @@ public class UserController {
         return "list";
     }
 
-    // V-25, le damos un nombre de atributo a la vista,pasar datos a la vista.
-    // es global al controlador
+    /*
+     * V-25,Paso 2.2 le damos un nombre de atributo a la vista,pasar datos a la
+     * vista, es global al controlador
+     */
     @ModelAttribute("users")
-    // V-25,Paso 24
+
+    // V-25,Paso 2.1
     public List<User> usersModel() {
-        // V-24,Paso 19, agregamos usuarios a la lista.
+        // V-24,Paso 1.30, agregamos usuarios a la lista.
         return Arrays.asList(
                 new User("Juan", "Gonzalez"),
                 new User("Rafel", "Ramo", "ramo@correo.com"),

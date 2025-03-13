@@ -10,25 +10,27 @@ import com.pjff.curso.srpingboot.webapp.springboot_web.models.dto.ParamMixDto;
 
 import jakarta.servlet.http.HttpServletRequest;
 
-//Vid 26
+//V-26,paso 2.3, creamos el nuevo controlador
 @RestController
 // nuestra ruta base
 @RequestMapping("/api/params")
 public class RequestParamsController {
 
-    // paso 25,http://localhost:8080/api/params/foo
+    // Paso 2.4,http://localhost:8080/api/params/foo
     @GetMapping("/foo")
-    // Vid 26,para enviar los datos le pondremos @RequestParam
-    // ponemos que el mensaje no sea requerido ,pero le damos un mensaje por defecto
+    /*
+     * Paso 2.7,para enviar los datos le pondremos @RequestParam
+     * ponemos que el mensaje no sea requerido ,pero le damos un mensaje por defecto
+     */
     public ParamDto foo(@RequestParam(required = false, defaultValue = "Hallo wir get es dir") String message) {
 
-        // Paso 26,creamos su instancia.
+        // Paso 2.6,creamos su instancia.
         ParamDto param = new ParamDto();
         param.setMessage(message);
         return param;
     }
 
-    // Vid 27, pasando múltiples parametros.
+    // V-27, pasando múltiples parametros.
     @GetMapping("/bar")
     // paso 27,pasamos mas de un parámetro , con el @RequestParam
     public ParamMixDto bar(@RequestParam String text, @RequestParam Integer code) {
@@ -40,7 +42,7 @@ public class RequestParamsController {
         return params;
     }
 
-    // Vid 28,paso 29,http://localhost:8080/api/params/request
+    // V-28,paso 29,http://localhost:8080/api/params/request
     @GetMapping("/request")
     public ParamMixDto request(HttpServletRequest request) {
         Integer code = 10;
