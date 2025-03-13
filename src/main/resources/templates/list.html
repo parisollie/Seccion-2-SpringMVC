@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${title}">Document</title>
+</head>
+<body>
+    <h1 th:text="${title}"></h1>
+    <!--Vid 23,paso 18,usamos el th:if ,si user esta vacio entonces -->
+    <div th:if="${users.isEmpty()}" th:text="${'No tiene elementos usuarios!'}"></div>
+
+    <!--
+    Vid 25, cuando no este vacio mostramos la tabla
+    Paso 20, creamos una tabla -->
+    <table th:if="${not users.isEmpty()}">
+        <thead>
+            <tr>
+                <th>name</th>
+                <th>lastname</th>
+                <th>email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--Vid 24,paso 20, aqui usamos el For each ,para poder iterar,por cada usuario (:each)-->
+            <tr th:each="user: ${users}">
+                <td th:text="${user.name}"></td>
+                <td th:text="${user.lastname}"></td>
+                <!--paso 23-->
+                <td th:if="${user.email}" th:text="${user.email}"></td>
+                <!--Para mostrar los usuarios que no tienen correo,expresion boleana la negamos.-->
+                <td th:if="${not (user.email!=null)}" th:text="${' - '}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

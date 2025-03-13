@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--Paso 1.4,Configura el timeleaf-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Paso 1.5, le pasamos el titulo-->
+    <title th:text="${title}">Document</title>
+</head>
+
+<!--Paso 1.2, creamoos el HTMl, para mostrar nuestros datos-->
+<body>
+    <h1 th:text="${title}"></h1>
+    <ul>
+        <!--
+           V-13,Paso 1.6 li es una lista de HTML
+            Accedemos a los atributos del user por medio de los setters y getters.
+        -->
+        <li th:text="${user.name}"></li>
+        <li th:text="${user.lastname}"></li>
+
+         <!--V-22,Paso 16, si es distinto de null que lo muestre -->
+        <li th:if="${user.email}" th:text="${user.email}"></li>
+        <li th:if="${user.email == null}" th:text="${'no tiene email'}"></li>
+    </ul>
+    <!--V-42-->
+    <a th:href="@{/list}">ver listado</a><br>
+    <a th:href="@{/api/params/foo?message=Hola que tal festival}">ver mensaje</a><br>
+    <a th:href="@{/api/params/foo(message='Hola que tal festival')}">ver mensaje 2</a><br>
+    <a th:href="@{/api/params/bar(text='Hola que tal festival', code=32323)}">ver bar mix 2 param</a><br>
+    <a th:href="@{'/api/var/baz/' + ${title}}">ver var path variable</a><br>
+    <a th:href="@{'/api/var/baz/' + 'Hola que tal festival'}">ver var path variable 2</a><br>
+    
+</body>
+
+</html>
