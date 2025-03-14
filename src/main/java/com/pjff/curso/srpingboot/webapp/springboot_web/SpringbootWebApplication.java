@@ -4,8 +4,11 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-// Vid 33, paso 37 le configuramos nuestro archivo properties
-// @PropertySource("classpath:values.properties")
+/*
+ * V-33, paso 2.21 le configuramos nuestro archivo value.properties
+ * 
+ * @PropertySource("classpath:values.properties")
+ */
 public class SpringbootWebApplication {
 
 	public static void main(String[] args) {

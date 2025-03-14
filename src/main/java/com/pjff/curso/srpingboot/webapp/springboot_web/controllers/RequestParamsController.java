@@ -30,26 +30,27 @@ public class RequestParamsController {
         return param;
     }
 
-    // V-27, pasando múltiples parametros.
+    // V-27,Paso 2.8 pasando múltiples parametros.
     @GetMapping("/bar")
-    // paso 27,pasamos mas de un parámetro , con el @RequestParam
+    // Pasamos mas de un parámetro , con el @RequestParam
     public ParamMixDto bar(@RequestParam String text, @RequestParam Integer code) {
 
         ParamMixDto params = new ParamMixDto();
         params.setMessage(text);
-        // paso 28, creamos un nuevo
+        // Paso 2.10, creamos un nuevo
         params.setCode(code);
         return params;
     }
 
-    // V-28,paso 29,http://localhost:8080/api/params/request
+    // V-28,paso 2.11,http://localhost:8080/api/params/request
     @GetMapping("/request")
     public ParamMixDto request(HttpServletRequest request) {
         Integer code = 10;
         try {
-            // Pasamos el valor string a un entero
+            // Pasamos el valor de string a un entero
             code = Integer.parseInt(request.getParameter("code"));
         } catch (NumberFormatException e) {
+            // por defecto es 0, asi que no hacemos nada
         }
         ParamMixDto params = new ParamMixDto();
         params.setCode(code);

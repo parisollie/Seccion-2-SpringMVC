@@ -1,6 +1,6 @@
 package com.pjff.curso.srpingboot.webapp.springboot_web.models.dto;
 
-//V-27 ,Paso 2. creamos la clase
+//V-27 ,Paso 2.9 creamos la clase
 public class ParamMixDto {
     // Ponemos sus atributos
     private String message;
