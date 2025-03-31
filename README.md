@@ -1,6 +1,6 @@
 # Spring Boot MVC App 
 
-A new Spring Boot 3 project.
+Spring MVC 2
 
 ## Getting Started
 
