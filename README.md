@@ -1,6 +1,6 @@
-# Spring Boot MVC App 
+# Spring Boot project MVC
 
-Spring MVC 2
+MVC 2
 
 ## Getting Started
 
