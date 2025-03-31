@@ -1,4 +1,4 @@
-# Spring Boot project MVC
+# Spring Boot project 
 
 MVC 2
 
